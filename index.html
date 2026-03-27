@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada Parentalidade iFood 2026 - Minimalista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ifood-red { color: #EA1D2C; }
+        .bg-ifood-red { background-color: #EA1D2C; }
+        
+        .timeline-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .phase-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        /* Linha vertical conectora */
+        .phase-section::before {
+            content: '';
+            position: absolute;
+            left: 219px;
+            top: 10px;
+            bottom: -40px;
+            width: 1px;
+            background-color: #E6E6E6;
+        }
+
+        .phase-section:last-child::before {
+            display: none;
+        }
+
+        .phase-info {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .phase-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #EA1D2C;
+            margin-bottom: 4px;
+        }
+
+        .phase-period {
+            font-size: 0.75rem;
+            color: #8C8C8C;
+            font-weight: 500;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        /* Ponto na linha */
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #E6E6E6;
+            border: 2px solid #FFF;
+            z-index: 2;
+            transition: all 0.2s ease;
+        }
+
+        .step-item.active::before {
+            background-color: #EA1D2C;
+            box-shadow: 0 0 0 3px rgba(234, 29, 44, 0.1);
+        }
+
+        .step-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1A1A1A;
+        }
+
+        .step-desc {
+            font-size: 0.75rem;
+            color: #666666;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .kit-label {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #EA1D2C;
+            background: #FFF5F6;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .phase-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .phase-info {
+                text-align: left;
+                padding-right: 0;
+            }
+            .phase-section::before {
+                left: 9px;
+            }
+            .step-item {
+                padding-left: 30px;
+            }
+            .step-item::before {
+                left: -25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="timeline-container">
+        <!-- Header Minimalista -->
+        <header class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-gray-100 pb-10">
+            <div>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">People e Saúde • Versão 2026</p>
+                <h1 class="text-3xl font-extrabold tracking-tight">Jornada <span class="ifood-red">Parentalidade</span></h1>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <p class="text-sm text-gray-500 font-medium max-w-xs md:text-right">
+                    Fluxo estruturado de suporte e acompanhamento ao Foodlover.
+                </p>
+            </div>
+        </header>
+
+        <!-- FASE 1 -->
+        <div class="phase-section">
+            <div class="phase-info">
+                <h2 class="phase-title">01. Tempo de Acolher</h2>
+                <p class="phase-period">1º e 2º Trimestre</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item active">
+                    <h3 class="step-title">Inscrição</h3>
+                    <p class="step-desc">Adesão oficial ao programa via People e Saúde.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Isenção de Copay</h3>
+                    <p class="step-desc">Garantia de segurança financeira imediata.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Checkpoint Saúde</h3>
+                    <p class="step-desc">Primeiro alinhamento clínico e suporte social.</p>
+                </div>
+                <div class="step-item active">
+                    <h3 class="step-title">Marco de Cuidado</h3>
+                    <p class="step-desc">Reconhecimento inicial da jornada.</p>
+                    <span class="kit-label">Kit Mamãe</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase-section">
+            <div class="phase-info">
+                <h2 class="phase-title">02. Tempo de Planejar</h2>
+                <p class="phase-period">3º Trimestre</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item active">
+                    <h3 class="step-title">Mapeamento Saúde</h3>
+                    <p class="step-desc">Atualização de indicadores para suporte ao parto.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Mentorias Gestante</h3>
+                    <p class="step-desc">Envolvimento BPs e Lideranças, Planeamento de licença e acolhimento.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Roda de Pais</h3>
+                    <p class="step-desc">Fórum de partilha e experiências iFood.</p>
+                </div>
+                <div class="step-item active">
+                    <h3 class="step-title">Preparação</h3>
+                    <p class="step-desc">Suporte ao enxoval e ambiente familiar.</p>
+                    <span class="kit-label">Kit Bebê</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase-section">
+            <div class="phase-info">
+                <h2 class="phase-title">03. Tempo de Cuidar</h2>
+                <p class="phase-period">Nascimento e Licença</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <h3 class="step-title">Plano e Licenças</h3>
+                    <p class="step-desc">Inclusão de dependentes e ativação oficial de licenças.</p>
+                </div>
+                <div class="step-item active">
+                    <h3 class="step-title">Checkpoint Bebê</h3>
+                    <p class="step-desc">Monitoramento preventivo e saúde pediátrica.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Mentoria Retorno</h3>
+                    <p class="step-desc">Planeamento estratégico do regresso (Opcional).</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title">Auxílio Financeiro</h3>
+                    <p class="step-desc">Isenção copay bebé e reembolso de despesas.</p>
+                </div>
+                <div class="step-item active">
+                    <h3 class="step-title">Boas-vindas</h3>
+                    <p class="step-desc">Celebração do novo membro da família.</p>
+                    <span class="kit-label">Kit Nascimento</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="phase-section">
+            <div class="phase-info">
+                <h2 class="phase-title">04. Tempo de Sustentar</h2>
+                <p class="phase-period">Retorno + 6 Meses</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <h3 class="step-title">Saúde Mental</h3>
+                    <p class="step-desc">Apoio emocional e equilíbrio no regresso ao trabalho.</p>
+                </div>
+                <div class="step-item active">
+                    <h3 class="step-title">Mentorias finais</h3>
+                    <p class="step-desc">Envolvimento lideranças e BPs para fecho do ciclo.</p>
+                </div>
+                <div class="step-item">
+                    <h3 class="step-title" style="color: #1A1A1A">Conclusão</h3>
+                    <p class="step-desc">Foodlover estabilizado e ciclo People encerrado.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-gray-100 flex justify-between items-center">
+            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">iFood People e Saúde © 2026</p>
+            <div class="w-16 h-1px bg-gray-200"></div>
+        </footer>
+    </div>
+
+</body>
+</html>
